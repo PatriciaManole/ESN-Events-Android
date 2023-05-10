@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "832315285219",
+    "firebase_url": "https://esnevents-e1166-default-rtdb.firebaseio.com",
+    "project_id": "esnevents-e1166",
+    "storage_bucket": "esnevents-e1166.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832315285219:android:062fe5ee245f7526c06fd6",
+        "android_client_info": {
+          "package_name": "com.example.esneventsandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832315285219-cf1jjc7madms7mfgs3qprhee3bu698jq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.esneventsandroid",
+            "certificate_hash": "a0d7b0c3c7a9505a7212b3a5fe422ea5a945bc44"
+          }
+        },
+        {
+          "client_id": "832315285219-7c7s4oqhtli5c5nsqvkm0hke56p01dqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBawaLg6HJXM7vUD291EAVkLUqkJ6BS1S4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832315285219-7c7s4oqhtli5c5nsqvkm0hke56p01dqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

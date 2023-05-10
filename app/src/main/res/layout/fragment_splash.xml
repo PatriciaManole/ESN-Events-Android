@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".fragments.SplashFragment">
+
+    <ImageView
+        android:id="@+id/esnstar_image_view"
+        android:layout_width="300dp"
+        android:layout_height="420dp"
+        android:layout_gravity="center"
+        android:src="@drawable/esnstar_colour" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:text="Welcome to ESN Events!"
+        android:textColor="#2e3192"
+        android:layout_marginTop="155dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Let the ESN Magic begin"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="550dp"
+        android:backgroundTint="#00aeef"/>
+
+</FrameLayout>
