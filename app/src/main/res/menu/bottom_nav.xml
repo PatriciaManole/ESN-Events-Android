@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Events"
+        android:id="@+id/events"
+        android:icon="@drawable/events"/>
+    <item android:title="National Events"
+        android:id="@+id/natevents"
+        android:icon="@drawable/esnstar_colour"/>
+    <item android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/profile"/>
+</menu>

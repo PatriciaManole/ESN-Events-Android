@@ -8,9 +8,10 @@
 
     <ImageView
         android:id="@+id/esnstar_image_view"
-        android:layout_width="300dp"
-        android:layout_height="420dp"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
+        android:layout_marginTop="-70dp"
         android:src="@drawable/esnstar_colour" />
 
     <TextView
@@ -19,17 +20,18 @@
         android:layout_gravity="top|center_horizontal"
         android:text="Welcome to ESN Events!"
         android:textColor="#2e3192"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="30dp"
         android:textSize="30sp"
         android:textStyle="bold"/>
 
     <Button
+        android:id="@+id/enternow"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Let the ESN Magic begin"
         android:textColor="@android:color/white"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="400dp"
         android:backgroundTint="#00aeef"/>
 
 </FrameLayout>

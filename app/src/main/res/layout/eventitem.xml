@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -58,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="Starting Point: Starbucks Unirii at 14.00"
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -88,6 +90,18 @@
                 android:textSize="20sp"/>
 
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="250dp"
+            android:minWidth="50dp"
+            android:minHeight="50dp"
+            android:padding="8dp"
+            android:src="@drawable/baseline_share_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
     </LinearLayout>

@@ -10,28 +10,7 @@ import android.widget.MediaController
 import android.widget.VideoView
 import com.example.esneventsandroid.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [NationalEventsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class NationalEventsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+class   NationalEventsFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,30 +22,19 @@ class NationalEventsFragment : Fragment() {
         mediaController.setAnchorView(videoView)
         videoView.setMediaController(mediaController)
 
-        val videoUri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.etvv)
-        videoView.setVideoURI(videoUri)
-        videoView.requestFocus()
+        val path ="android.resource://" + requireContext().packageName + "/" + R.raw.esc
+        videoView.setVideoURI(Uri.parse(path))
+        videoView.setZOrderOnTop(true)
+        videoView.seekTo(100)
         videoView.start()
+
+        val videoView2 = view.findViewById<VideoView>(R.id.hit)
+        val path2 ="android.resource://" + requireContext().packageName + "/" + R.raw.hit
+        videoView2.setVideoURI(Uri.parse(path2))
+        videoView2.setZOrderOnTop(true)
+        videoView2.seekTo(100)
+        videoView2.start()
         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NationalEventsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            NationalEventsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

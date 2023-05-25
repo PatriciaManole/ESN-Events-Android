@@ -3,20 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".fragments.NationalEventsFragment">
+
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="Escape to Vama Veche" />
 
     <VideoView
         android:id="@+id/etvv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="225dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Halloween in Transylvania " />
+
+    <VideoView
+        android:id="@+id/hit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
 
 
 </FrameLayout>

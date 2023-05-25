@@ -1,60 +1,61 @@
 package com.example.esneventsandroid.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import com.example.esneventsandroid.MainActivity
 import com.example.esneventsandroid.R
+import com.google.firebase.auth.FirebaseAuth
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SignUpFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SignUpFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var auth: FirebaseAuth
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_sign_up, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SignUpFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SignUpFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        auth = FirebaseAuth.getInstance()
+
+        val emailEditText = view.findViewById<EditText>(R.id.email_sign_up)
+        val passwordEditText = view.findViewById<EditText>(R.id.password_sign_up)
+        val signUpButton = view.findViewById<Button>(R.id.button_sign_up)
+        val switchToLoginPage= view.findViewById<TextView>(R.id.button_login_sign_up)
+
+        signUpButton.setOnClickListener {
+            val email = emailEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(activity, "Please fill out all fields.", Toast.LENGTH_SHORT).show()
+            } else {
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(activity, "Registration successful!", Toast.LENGTH_SHORT).show()
+                            (activity as? MainActivity)?.replaceFragment(EventsFragment())
+
+                        } else {
+                            Toast.makeText(activity, "Registration failed. Please try again later.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
             }
+        }
+
+        switchToLoginPage.setOnClickListener {
+            (activity as? MainActivity)?.replaceFragment(LogInFragment())
+        }
+
+        return view
     }
 }
